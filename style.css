@@ -58,6 +58,7 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
+  transition: 250ms ease-in-out;
 }
 
 .card-body {
@@ -76,6 +77,7 @@ body {
   flex-direction: column;
   gap: 1rem;
   margin-top: 1.5rem;
+  transition: 250ms ease-in-out;
 }
 
 .card-header h1 {
@@ -107,6 +109,7 @@ body {
   max-width: 300px;
   padding: 2rem 0rem;
   gap: 2rem;
+  transition: 250ms ease-in-out;
 }
 
 .card-footer .stats {
@@ -119,6 +122,7 @@ body {
   font-family: var(--ff-inter);
   font-size: 1.3rem;
   font-weight: var(--fw-bold);
+  transition: 250ms ease-in-out;
 }
 
 .card-footer .uppercase {
@@ -131,6 +135,89 @@ body {
   text-transform: uppercase;
   font-size: .7rem;
   letter-spacing: 1px;
+  transition: 250ms ease-in-out;
+}
+
+/* Stat counter animation on load */
+@property --Stat-A {
+  syntax: "<integer>";
+  initial-value: 10;
+  inherits: false;
+
+}
+
+.stat-counter-A {
+  animation: counter 2s alternate ease-in-out;
+  counter-reset: num var(--Stat-A);
+}
+
+.stat-counter-A::after {
+  content: counter(num);
+}
+
+@keyframes counter {
+  from {
+    --Stat-A: 0;
+  }
+
+  to {
+    --Stat-A: 10;
+  }
+}
+
+@property --Stat-B {
+  syntax: "<integer>";
+  initial-value: 314;
+  inherits: false;
+
+}
+
+.stat-counter-B {
+  animation: counterB 3s alternate ease-in-out;
+  counter-reset: numB var(--Stat-B);
+}
+
+.stat-counter-B::after {
+  content: counter(numB);
+}
+
+@keyframes counterB {
+  from {
+    --Stat-B: 0;
+  }
+
+  to {
+    --Stat-B: 314;
+  }
+}
+
+@property --Stat-C {
+  syntax: "<integer>";
+  initial-value: 12;
+  inherits: false;
+}
+
+.stat-counter-C {
+  animation: counter-C 4s alternate ease-in-out;
+  counter-reset: num var(--Stat-C);
+}
+
+.stat-counter-C::after {
+  content: counter(num);
+}
+
+@keyframes counter-C {
+  0% {
+    --Stat-C: 0;
+  }
+
+  50% {
+    --Stat-C: 0;
+  }
+
+  100% {
+    --Stat-C: 12;
+  }
 }
 
 
@@ -150,7 +237,6 @@ body {
 
 .imgBox {
   background-image: url(/images/image-header-desktop.jpg);
-
   opacity: 60%;
   background-size: cover;
   position: absolute;
@@ -162,24 +248,101 @@ body {
   mix-blend-mode: multiply;
 }
 
+/* media quierry for mobile */
+@media screen and (max-width: 768px) {
+  .card {
+    flex-direction: column-reverse;
+    align-content: flex-start;
+    width: 100%;
+    max-width: max-content
+  }
+
+  .card-body {
+    width: 100%;
+    padding: 1rem;
+    margin: 0 1rem;
+    max-width: max-content
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .card-header h1 {
+    font-size: 1.3rem;
+    max-width: 200px;
+  }
+
+  .card-header p {
+    font-size: .7rem;
+    max-width: 200px;
+  }
+
+  .card-footer {
+    flex-direction: column;
+    align-content: flex-end;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 0rem;
+  }
+
+  .card-footer .stats {
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: .3rem;
+  }
+
+  .card-footer .stats h2 {
+    font-size: .893rem;
+  }
+
+  .card-footer .stats P {
+    font-size: .5rem;
+  }
+
+  .card-img {
+    width: 100%;
+    background-color: var(--pr-soft-Violet);
+    opacity: 100%;
+    position: relative;
+    padding-right: 3rem;
+    z-index: 1;
+    border-radius: .4rem .4rem 0 0;
+    width: 14rem;
+    height: 14rem;
+  }
+
+  .imgBox {
+    background-image: url(/images/image-header-mobile.jpg);
+    opacity: 60%;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    mix-blend-mode: multiply;
+  }
+}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* hover states*/
+.card:hover {
+  box-shadow: 0rem 0rem 3rem hsla(277, 64%, 61%, 0.2);
+  transform: scale(1.02);
+}
 
 /* attribution section */
 footer {
@@ -210,7 +373,7 @@ footer {
 @media (hover: hover) {
 
 
-  html:hover .card-header h1 span{
+  html:hover .card-header h1 span {
     color: var(--pr-soft-Violet);
   }
 
