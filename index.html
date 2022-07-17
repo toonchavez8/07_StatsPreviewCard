@@ -1,33 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
+<head>
+
+  <!-- base meta tags -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- links -->
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Stats preview card component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
 <body>
 
-  Get insights that help your business grow.
+  <main class="card-wrapper">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-header">
+          <h1> Get <span>insights</span> that help your business grow.
+          </h1>
+          <p> Discover the benefits of data analytics and make better decisions regarding revenue, customer
+            experience, and overall efficiency.</p>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <h2>10k+</h2>
+            <p>companies</p>
+          </div>
+          <div class="stats">
+            <h2>314</h2>
+            <p>templates</p>
+          </div>
+          <div class="stats uppercase">
+            <h2>12m+</h2>
+            <p>queries</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-img" alt="">
+        <div class="imgBox" alt="group of business women working"></div>
+      </div>
+    </div>
+  </main>
 
-  Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-  experience, and overall efficiency.
 
-  10k+ companies
-  314 templates
-  12m+ queries
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+
+
+
+  <!-- Attribution section -->
+
+  <footer class="attribution">
+    <div class="footerblk">
+      <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/toonchavez8/04_Product_reviewCard">Miguel Chavez</a>.</p>
+    </div>
+
+  </footer>
 </body>
+
 </html>
